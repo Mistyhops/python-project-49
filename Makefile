@@ -10,3 +10,6 @@ build:
 package-install:
 	python -V
 	uv tool install dist/*.whl
+
+lint:
+	uv run ruff check brain_games
