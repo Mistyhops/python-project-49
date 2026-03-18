@@ -1,4 +1,5 @@
-from brain_games.utils import welcome_script, is_even_game
+from brain_games.games.games import is_even_game
+from brain_games.utils import welcome_script
 
 
 def main():

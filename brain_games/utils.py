@@ -1,8 +1,3 @@
-import random
-
-import prompt
-
-
 def welcome_script() -> str:
     welcome_message = f"Welcome to the Brain Games!"
     print(welcome_message)
@@ -15,21 +10,20 @@ def welcome_script() -> str:
     return username
 
 
-def is_even_game(username: str):
-    string_answer = {
-        True: 'yes',
-        False: 'no',
-    }
-
-    value = random.randint(1, 1000)
-    print(f"Question: {value}")
-    is_even = string_answer.get(value % 2 == 0)
-    user_answer = prompt.string("Your answer: ")
-
-    if user_answer == is_even:
+def check_answer(user_answer, correct_answer, username):
+    if user_answer == correct_answer:
         print("Correct!")
         return True
     else:
-        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{is_even}'.\n"
+        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.\n"
               f"Let's try again, {username}!")
         return False
+
+
+def int_input_answer() -> int:
+    try:
+        user_answer = int(input("Your answer: "))
+    except ValueError as exc:
+        print("Incorrect format answer. Enter integer")
+        user_answer = int_input_answer()
+    return user_answer
