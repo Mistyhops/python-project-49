@@ -2,22 +2,32 @@ import random
 
 import prompt
 
-from brain_games.utils import int_input_answer, check_answer, make_progression, is_prime_number, STRING_ANSWER
+from brain_games.utils import (
+    STRING_ANSWER,
+    check_answer,
+    int_input_answer,
+    is_prime_number,
+    make_progression,
+)
 
 
 def is_even_game(username: str):
-    value = random.randint(1, 1000)
-    print(f"Question: {value}")
-    is_even = STRING_ANSWER.get(value % 2 == 0)
-    user_answer = prompt.string("Your answer: ")
+    print("Answer 'yes' if number is even otherwise answer 'no'")
 
-    if user_answer == is_even:
-        print("Correct!")
-        return True
+    for _ in range(3):
+        value = random.randint(1, 1000)
+        print(f"Question: {value}")
+        is_even = STRING_ANSWER.get(value % 2 == 0)
+        user_answer = prompt.string("Your answer: ")
+
+        if not check_answer(
+                user_answer=user_answer,
+                correct_answer=is_even,
+                username=username,
+        ):
+            break
     else:
-        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{is_even}'.\n"
-              f"Let's try again, {username}!")
-        return False
+        print(f"Congratulations, {username}")
 
 
 def calc_game(username: str):
@@ -39,9 +49,11 @@ def calc_game(username: str):
 
     # Second iteration
     first_value, second_value = random.randint(1, 30), random.randint(1, 30)
-    correct_answer = max(first_value, second_value) - min(first_value, second_value)
+    correct_answer = max(first_value, second_value) - \
+                     min(first_value, second_value)
 
-    print(f"Question: {max(first_value, second_value)} - {min(first_value, second_value)}")
+    print(f"Question: {max(first_value, second_value)} - "
+          f"{min(first_value, second_value)}")
     user_answer = int_input_answer()
 
     if not check_answer(
