@@ -12,7 +12,7 @@ from brain_games.utils import (
 
 
 def is_even_game(username: str):
-    print("Answer 'yes' if number is even otherwise answer 'no'")
+    print("Answer \"yes\" if the number is even, otherwise answer \"no\".")
 
     for _ in range(3):
         value = random.randint(1, 1000)
