@@ -1,0 +1,18 @@
+from brain_games.utils import welcome_script, is_even_game
+
+
+def main():
+    username = welcome_script()
+
+    print("Answer 'yes' if number is even otherwise answer 'no'")
+
+    for _ in range(3):
+        result = is_even_game(username=username)
+        if not result:
+            break
+    else:
+        print(f"Congratulations, {username}")
+
+
+if __name__ == '__main__':
+    main()
