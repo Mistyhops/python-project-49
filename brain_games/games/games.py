@@ -27,7 +27,7 @@ def is_even_game(username: str):
         ):
             break
     else:
-        print(f"Congratulations, {username}")
+        print(f"Congratulations, {username}!")
 
 
 def calc_game(username: str):
@@ -77,7 +77,7 @@ def calc_game(username: str):
     ):
         return False
 
-    print(f"Congratulations, {username}")
+    print(f"Congratulations, {username}!")
 
 
 def gcd_game(username: str):
@@ -103,7 +103,7 @@ def gcd_game(username: str):
         ):
             break
     else:
-        print(f"Congratulations, {username}")
+        print(f"Congratulations, {username}!")
 
 
 def progression_game(username: str):
@@ -129,7 +129,7 @@ def progression_game(username: str):
         ):
             break
     else:
-        print(f"Congratulations, {username}")
+        print(f"Congratulations, {username}!")
 
 
 def is_prime_game(username: str):
@@ -149,4 +149,4 @@ def is_prime_game(username: str):
         ):
             break
     else:
-        print(f"Congratulations, {username}")
+        print(f"Congratulations, {username}!")
