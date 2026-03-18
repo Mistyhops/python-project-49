@@ -1,3 +1,6 @@
+import random
+
+
 def welcome_script() -> str:
     welcome_message = f"Welcome to the Brain Games!"
     print(welcome_message)
@@ -27,3 +30,12 @@ def int_input_answer() -> int:
         print("Incorrect format answer. Enter integer")
         user_answer = int_input_answer()
     return user_answer
+
+
+def make_progression() -> list[int]:
+    first_value = random.randint(1, 10)
+    step = random.randint(1, 10)
+
+    values_list = list(range(first_value, first_value + (8 * step), step))
+
+    return values_list
