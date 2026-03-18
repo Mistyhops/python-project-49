@@ -1,5 +1,10 @@
 import random
 
+STRING_ANSWER = {
+    True: 'yes',
+    False: 'no',
+}
+
 
 def welcome_script() -> str:
     welcome_message = f"Welcome to the Brain Games!"
@@ -39,3 +44,12 @@ def make_progression() -> list[int]:
     values_list = list(range(first_value, first_value + (8 * step), step))
 
     return values_list
+
+
+def is_prime_number(value: int) -> bool:
+    if value <= 1:
+        return False
+    for i in range(2, value):
+        if value % i == 0:
+            return False
+    return True

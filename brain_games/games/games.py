@@ -2,18 +2,13 @@ import random
 
 import prompt
 
-from brain_games.utils import int_input_answer, check_answer, make_progression
+from brain_games.utils import int_input_answer, check_answer, make_progression, is_prime_number, STRING_ANSWER
 
 
 def is_even_game(username: str):
-    string_answer = {
-        True: 'yes',
-        False: 'no',
-    }
-
     value = random.randint(1, 1000)
     print(f"Question: {value}")
-    is_even = string_answer.get(value % 2 == 0)
+    is_even = STRING_ANSWER.get(value % 2 == 0)
     user_answer = prompt.string("Your answer: ")
 
     if user_answer == is_even:
@@ -118,6 +113,26 @@ def progression_game(username: str):
         if not check_answer(
                 user_answer=user_answer,
                 correct_answer=correct_answer,
+                username=username,
+        ):
+            break
+    else:
+        print(f"Congratulations, {username}")
+
+
+def is_prime_game(username: str):
+    print("Answer \"yes\" if given number is prime. Otherwise answer \"no\".")
+
+    for _ in range(3):
+        value = random.randint(1, 30)
+        print(f"Question: {value}")
+
+        is_prime = STRING_ANSWER.get(is_prime_number(value))
+        user_answer = prompt.string("Your answer: ")
+
+        if not check_answer(
+                user_answer=user_answer,
+                correct_answer=is_prime,
                 username=username,
         ):
             break
