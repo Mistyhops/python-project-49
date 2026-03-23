@@ -1,4 +1,4 @@
-from brain_games.games.games import calc_game
+from brain_games.games.brain_calc import calc_game
 from brain_games.utils import welcome_script
 
 

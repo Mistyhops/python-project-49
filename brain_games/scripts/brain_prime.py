@@ -1,4 +1,4 @@
-from brain_games.games.games import is_prime_game
+from brain_games.games.brain_prime import is_prime_game
 from brain_games.utils import welcome_script
 
 

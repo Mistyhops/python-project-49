@@ -1,4 +1,4 @@
-from brain_games.games.games import gcd_game
+from brain_games.games.brain_gcd import gcd_game
 from brain_games.utils import welcome_script
 
 

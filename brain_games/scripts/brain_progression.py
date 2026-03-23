@@ -1,4 +1,4 @@
-from brain_games.games.games import progression_game
+from brain_games.games.brain_progression import progression_game
 from brain_games.utils import welcome_script
 
 
